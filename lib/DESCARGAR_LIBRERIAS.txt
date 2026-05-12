@@ -1,0 +1,26 @@
+LIBRERÍAS NECESARIAS PARA EL PROYECTO
+======================================
+
+1. DRIVER JDBC - SQL Server
+---------------------------
+Descarga: https://learn.microsoft.com/es-es/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server
+Archivo : mssql-jdbc-12.8.1.jre11.jar  (JDK 11)
+          mssql-jdbc-12.8.1.jre17.jar  (JDK 17)
+Destino : carpeta lib/ de este proyecto
+
+2. SERVIDOR TOMCAT 10
+---------------------
+Descarga: https://tomcat.apache.org/download-10.cgi
+Archivo : apache-tomcat-10.x.x.zip (Windows)
+Instalar: descomprime en C:\tomcat10
+
+3. JAKARTA SERVLET API (ya incluida en Tomcat)
+-----------------------------------------------
+Si tu IDE la necesita por separado:
+Copia desde: C:\tomcat10\lib\servlet-api.jar
+Pega en    : lib/ de este proyecto
+
+IMPORTANTE:
+-----------
+Tomcat 10 usa "jakarta.*" (no "javax.*").
+Los servlets ya están escritos con "jakarta.servlet.*" - no cambies los imports.

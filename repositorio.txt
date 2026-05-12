@@ -1,0 +1,9 @@
+ENLACE AL REPOSITORIO DE BURGUERZONA WEB
+=========================================
+
+GitHub : https://github.com/TuUsuario/burguerzona-web
+GitLab : https://gitlab.com/TuUsuario/burguerzona-web
+
+Reemplaza "TuUsuario" con tu nombre de usuario real.
+
+Rama principal : main

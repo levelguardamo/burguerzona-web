@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>BurguerZona Web</display-name>
+
+    <!-- ── Platos ── -->
+    <servlet>
+        <servlet-name>PlatoServlet</servlet-name>
+        <servlet-class>co.burguerzona.servlet.PlatoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PlatoServlet</servlet-name>
+        <url-pattern>/platos</url-pattern>
+    </servlet-mapping>
+
+    <!-- ── Usuarios ── -->
+    <servlet>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <servlet-class>co.burguerzona.servlet.UsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsuarioServlet</servlet-name>
+        <url-pattern>/usuarios</url-pattern>
+    </servlet-mapping>
+
+    <!-- ── Pedidos ── -->
+    <servlet>
+        <servlet-name>PedidoServlet</servlet-name>
+        <servlet-class>co.burguerzona.servlet.PedidoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PedidoServlet</servlet-name>
+        <url-pattern>/pedidos</url-pattern>
+    </servlet-mapping>
+
+    <!-- ── Facturas ── -->
+    <servlet>
+        <servlet-name>FacturaServlet</servlet-name>
+        <servlet-class>co.burguerzona.servlet.FacturaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FacturaServlet</servlet-name>
+        <url-pattern>/facturas</url-pattern>
+    </servlet-mapping>
+
+    <!-- Página de bienvenida -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

@@ -1,0 +1,56 @@
+INSTRUCCIONES PARA EJECUTAR BURGUERZONA WEB
+============================================
+
+PASO 1 - INSTALAR TOMCAT 10
+-----------------------------
+1. Ve a: https://tomcat.apache.org/download-10.cgi
+2. Descarga el ZIP de Windows (apache-tomcat-10.x.x.zip)
+3. Descomprime en C:\tomcat10
+
+PASO 2 - DESCARGAR DRIVER JDBC
+--------------------------------
+1. Ve a: https://learn.microsoft.com/es-es/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server
+2. Descarga y descomprime el ZIP
+3. Copia el archivo .jar dentro de:
+   - lib/ de este proyecto
+   - C:\tomcat10\lib\
+
+PASO 3 - CONFIGURAR CREDENCIALES
+----------------------------------
+Abre: src/co/burguerzona/connection/ConexionDB.java
+Cambia:
+  USUARIO = "sa"    -->  tu usuario de SQL Server
+  CLAVE   = "1234"  -->  tu contraseña de SQL Server
+
+PASO 4 - COMPILAR EL PROYECTO
+-------------------------------
+Abre una terminal (cmd) en la carpeta raíz del proyecto y ejecuta:
+
+  javac -cp "lib/*;C:\tomcat10\lib\servlet-api.jar" ^
+        -d WebContent/WEB-INF/classes ^
+        -sourcepath src ^
+        src/co/burguerzona/connection/ConexionDB.java ^
+        src/co/burguerzona/model/*.java ^
+        src/co/burguerzona/dao/*.java ^
+        src/co/burguerzona/dao/impl/*.java ^
+        src/co/burguerzona/servlet/*.java
+
+PASO 5 - DESPLEGAR EN TOMCAT
+------------------------------
+1. Copia toda la carpeta WebContent/ a:
+   C:\tomcat10\webapps\burguerzona\
+
+2. Copia también el driver JDBC a:
+   C:\tomcat10\webapps\burguerzona\WEB-INF\lib\
+
+PASO 6 - INICIAR TOMCAT
+-------------------------
+Abre cmd como administrador y ejecuta:
+   C:\tomcat10\bin\startup.bat
+
+PASO 7 - ABRIR EN EL NAVEGADOR
+--------------------------------
+   http://localhost:8080/burguerzona/
+
+Para detener Tomcat:
+   C:\tomcat10\bin\shutdown.bat
