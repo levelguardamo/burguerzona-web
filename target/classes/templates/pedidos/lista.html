@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BurguerZona - Pedidos</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="header">
+    <h1>BurguerZona</h1>
+</div>
+<div class="container">
+    <div class="top-bar">
+        <h2>Gestion de Pedidos</h2>
+        <a th:href="@{/pedidos/nuevo}" class="btn btn-primary">+ Nuevo Pedido</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID Usuario</th>
+                <th>ID Plato</th>
+                <th>Fecha</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pedido : ${pedidos}">
+                <td th:text="${pedido.idPedido}"></td>
+                <td th:text="${pedido.idUser}"></td>
+                <td th:text="${pedido.idPlato}"></td>
+                <td th:text="${pedido.fechaPedido}"></td>
+                <td th:text="${pedido.cantidad}"></td>
+                <td>
+                    <a th:href="@{/pedidos/editar/{id}(id=${pedido.idPedido})}"
+                       class="btn btn-warning">Editar</a>
+                    <a th:href="@{/pedidos/eliminar/{id}(id=${pedido.idPedido})}"
+                       class="btn btn-danger"
+                       onclick="return confirm('Eliminar este pedido?')">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a th:href="@{/}" class="btn btn-secondary">Volver al inicio</a>
+</div>
+<div class="footer">
+    <p>BurguerZona 2025 - Evidencia GA7-220501096-AA3-EV01 - SENA</p>
+</div>
+</body>
+</html>

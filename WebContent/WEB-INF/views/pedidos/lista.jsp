@@ -5,7 +5,7 @@
 
 <div class="top-bar">
     <h2>&#x1F4CB; Gestión de Pedidos</h2>
-    <a href="${pageContext.request.contextPath}/WEB-INF/views/pedidos/formulario.jsp"
+    <a href="${pageContext.request.contextPath}/pedidos?accion=nuevo"
        class="btn btn-primary">+ Nuevo Pedido</a>
 </div>
 

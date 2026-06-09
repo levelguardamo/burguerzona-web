@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BurguerZona - Platos</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="header">
+    <h1>BurguerZona</h1>
+</div>
+<div class="container">
+    <div class="top-bar">
+        <h2>Gestion de Platos</h2>
+        <a th:href="@{/platos/nuevo}" class="btn btn-primary">+ Nuevo Plato</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Descripcion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="plato : ${platos}">
+                <td th:text="${plato.idPlato}"></td>
+                <td th:text="${plato.nombrePlato}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(plato.precio, 1, 'COMMA', 0, 'POINT')}"></td>
+                <td th:text="${plato.descripcion}"></td>
+                <td>
+                    <a th:href="@{/platos/editar/{id}(id=${plato.idPlato})}"
+                       class="btn btn-warning">Editar</a>
+                    <a th:href="@{/platos/eliminar/{id}(id=${plato.idPlato})}"
+                       class="btn btn-danger"
+                       onclick="return confirm('Eliminar este plato?')">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a th:href="@{/}" class="btn btn-secondary">Volver al inicio</a>
+</div>
+<div class="footer">
+    <p>BurguerZona 2025 - Evidencia GA7-220501096-AA3-EV01 - SENA</p>
+</div>
+</body>
+</html>

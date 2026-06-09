@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="co.burguerzona.model.Factura" %>
@@ -5,7 +6,7 @@
 
 <div class="top-bar">
     <h2>&#x1F4C4; Gestión de Facturas</h2>
-    <a href="${pageContext.request.contextPath}/WEB-INF/views/facturas/formulario.jsp"
+    <a href="${pageContext.request.contextPath}/facturas?accion=nuevo"
        class="btn btn-primary">+ Nueva Factura</a>
 </div>
 

@@ -5,7 +5,7 @@
 
 <div class="top-bar">
     <h2>&#x1F354; Gestión de Platos</h2>
-    <a href="${pageContext.request.contextPath}/WEB-INF/views/platos/formulario.jsp"
+    <a href="${pageContext.request.contextPath}/platos?accion=nuevo"
        class="btn btn-primary">+ Nuevo Plato</a>
 </div>
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BurguerZona - Pedido</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="header">
+    <h1>BurguerZona</h1>
+</div>
+<div class="container">
+    <h2 th:text="${esEdicion} ? 'Editar Pedido' : 'Nuevo Pedido'"></h2>
+    <br>
+    <div class="form-card">
+        <form th:action="@{/pedidos/guardar}" th:object="${pedido}" method="post">
+            <input type="hidden" th:field="*{idPedido}">
+            <div class="form-group">
+                <label>Usuario</label>
+                <select th:field="*{idUser}">
+                    <option value="">-- Selecciona un usuario --</option>
+                    <option th:each="u : ${usuarios}"
+                            th:value="${u.idUser}"
+                            th:text="${u.nombre + ' ' + u.apellidos}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Plato</label>
+                <select th:field="*{idPlato}">
+                    <option value="">-- Selecciona un plato --</option>
+                    <option th:each="p : ${platos}"
+                            th:value="${p.idPlato}"
+                            th:text="${p.nombrePlato}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fecha del pedido</label>
+                <input type="date" th:field="*{fechaPedido}" required>
+            </div>
+            <div class="form-group">
+                <label>Cantidad</label>
+                <input type="number" th:field="*{cantidad}" min="1" required>
+            </div>
+            <button type="submit" class="btn btn-primary"
+                    th:text="${esEdicion} ? 'Actualizar' : 'Guardar'"></button>
+            <a th:href="@{/pedidos}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <p>BurguerZona 2025 - Evidencia GA7-220501096-AA3-EV01 - SENA</p>
+</div>
+</body>
+</html>

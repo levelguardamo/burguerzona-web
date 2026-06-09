@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BurguerZona - Sistema de Gestión</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+<div class="header">
+    <h1> BurguerZona</h1>
+    <p>Sistema de Gestión de Restaurante</p>
+</div>
+<div class="container">
+    <h2>Bienvenido al Sistema de Gestión</h2>
+    <p style="color:#666; margin-bottom:28px;">Selecciona un módulo para comenzar:</p>
+    <div class="menu-grid">
+        <a th:href="@{/platos}" class="menu-card" style="border-top:4px solid #b71c1c;">
+            <div class="menu-icon"></div>
+            <div class="menu-title" style="color:#b71c1c;">Platos</div>
+            <div class="menu-sub">Gestión del menú</div>
+        </a>
+        <a th:href="@{/usuarios}" class="menu-card" style="border-top:4px solid #1565c0;">
+            <div class="menu-icon"></div>
+            <div class="menu-title" style="color:#1565c0;">Usuarios</div>
+            <div class="menu-sub">Clientes y empleados</div>
+        </a>
+        <a th:href="@{/pedidos}" class="menu-card" style="border-top:4px solid #2e7d32;">
+            <div class="menu-icon"></div>
+            <div class="menu-title" style="color:#2e7d32;">Pedidos</div>
+            <div class="menu-sub">Registro de pedidos</div>
+        </a>
+        <a th:href="@{/facturas}" class="menu-card" style="border-top:4px solid #f57c00;">
+            <div class="menu-icon"></div>
+            <div class="menu-title" style="color:#f57c00;">Facturas</div>
+            <div class="menu-sub">Facturación</div>
+        </a>
+    </div>
+</div>
+<div class="footer">
+    <p>BurguerZona © 2025 — Evidencia GA7-220501096-AA3-EV01 — SENA</p>
+</div>
+</body>
+</html>

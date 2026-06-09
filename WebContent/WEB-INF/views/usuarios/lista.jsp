@@ -5,7 +5,7 @@
 
 <div class="top-bar">
     <h2>&#x1F464; Gestión de Usuarios</h2>
-    <a href="${pageContext.request.contextPath}/WEB-INF/views/usuarios/formulario.jsp"
+    <a href="${pageContext.request.contextPath}/usuarios?accion=nuevo"
        class="btn btn-primary">+ Nuevo Usuario</a>
 </div>
 

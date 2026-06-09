@@ -17,7 +17,6 @@ import java.util.List;
  * @author Equipo BurguerZona
  * @version 1.0
  */
-@WebServlet("/facturas")
 public class FacturaServlet extends HttpServlet {
 
     private final FacturaDaoImpl dao = new FacturaDaoImpl();
@@ -27,6 +26,12 @@ public class FacturaServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String accion = req.getParameter("accion");
+
+        if ("nuevo".equals(accion)) {
+            req.getRequestDispatcher("/WEB-INF/views/facturas/formulario.jsp")
+               .forward(req, resp);
+            return;
+        }
 
         if ("editar".equals(accion)) {
             int id = Integer.parseInt(req.getParameter("id"));

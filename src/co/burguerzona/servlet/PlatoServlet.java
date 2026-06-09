@@ -19,7 +19,6 @@ import java.util.List;
  * @author Equipo BurguerZona
  * @version 1.0
  */
-@WebServlet("/platos")
 public class PlatoServlet extends HttpServlet {
 
     private final PlatoDaoImpl dao = new PlatoDaoImpl();
@@ -32,6 +31,12 @@ public class PlatoServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String accion = req.getParameter("accion");
+
+        if ("nuevo".equals(accion)) {
+            req.getRequestDispatcher("/WEB-INF/views/platos/formulario.jsp")
+               .forward(req, resp);
+            return;
+        }
 
         if ("editar".equals(accion)) {
             int id = Integer.parseInt(req.getParameter("id"));

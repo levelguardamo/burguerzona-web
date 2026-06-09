@@ -1,0 +1,23 @@
+=====================================================
+  ENLACE DEL REPOSITORIO - GA7-220501096-AA3-EV01
+  Aprendiz: Daniel Restrepo
+  SENA
+=====================================================
+
+Repositorio GitHub:
+https://github.com/levelguardamo/burguerzona-web
+
+Rama principal: main
+
+Descripción:
+Proyecto BurguerZona migrado a Spring Boot con
+Thymeleaf y Spring Data JPA para la evidencia
+GA7-220501096-AA3-EV01.
+
+Tecnologías usadas:
+- Java 17
+- Spring Boot 3.2.5
+- Spring Data JPA
+- Thymeleaf
+- SQL Server
+- Maven
